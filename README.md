@@ -51,4 +51,4 @@ Important: 手机必须和电脑在同一个局域网(公司内quvideo2和有线
    limitations under the License.
 ```
 
-### 欢迎各位pull request，增加更多的功能
+### 欢迎各位 star 和 pull request，增加更多的功能
