@@ -8,7 +8,6 @@ $( document ).ready(function() {
 
 function openFunction(){
   var url = $('#hybridUrl').val();
-  alert(url);
   $.ajax(
     {
       url:"open?url="+escape(url), success: function(result){
