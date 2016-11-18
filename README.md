@@ -1,12 +1,12 @@
 # Hybrid JS Debug
 
-## Hybrid JS Debug 是一个高效的调试工具，可以直接通过PC端浏览器打开H5页面. 
+> Hybrid JS Debug 是一个高效的Hybrid调试工具，可以直接通过PC端浏览器将H5页面展示在App中. 
 
-## 不再依赖App去改动Url，支持App中所有的JSApi
+> 不再依赖App去改动Url，支持App中所有的JSApi
 
 ### Using Hybrid JS Debug Library in your application
 ```groovy
-debugCompile 'com.vivavideo.mobile:debugjs:0.1.0'
+debugCompile 'com.vivavideo.mobile:debugjs:0.1.0@aar'
 ```
 Use `debugCompile` so that it will only compile in your debug build not in release apk.
 
