@@ -8,7 +8,6 @@ import com.vivavideo.mobile.h5api.api.H5Context;
 import com.vivavideo.mobile.h5api.api.H5Param;
 
 import android.content.Context;
-import android.content.Intent;
 import android.content.res.AssetManager;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -124,12 +123,17 @@ public class DebugServer implements Runnable {
                 bundle.putString(H5Param.URL, openUrl);
                 h5Bundle.setParams(bundle);
                 //start Hybrid
-                DebugUtil.getH5Service().startPage(h5Context,h5Bundle);
+                try {
+                    DebugUtil.getH5Service().startPage(h5Context, h5Bundle);
+                } catch (Throwable e) {
+                    writeServerError(output, e.toString());
+                    return;
+                }
             } else {
                 bytes = loadContent(route);
             }
             if (null == bytes) {
-                writeServerError(output);
+                writeServerError(output, "");
                 return;
             }
 
@@ -164,8 +168,8 @@ public class DebugServer implements Runnable {
         }
     }
 
-    private void writeServerError(PrintStream output) {
-        output.println("HTTP/1.0 500 Internal Server Error");
+    private void writeServerError(PrintStream output, String exception) {
+        output.println("HTTP/1.0 500 Internal Server Error :" + exception);
         output.flush();
     }
 

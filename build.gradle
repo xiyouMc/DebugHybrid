@@ -26,7 +26,7 @@ apply plugin: 'signing'
 
 //定义GroupID和Version，ArtefactID会自动使用Project名
 group = 'com.vivavideo.mobile'
-version = '0.1.0'
+version = '0.2.0'
 
 artifacts {
     archives file('build/libs/' + project.name + '.jar')

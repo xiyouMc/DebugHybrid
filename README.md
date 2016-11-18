@@ -16,6 +16,10 @@ That’s all, just start the application, you will be able to see logs in the lo
 
 Important: 手机必须和电脑在同一个局域网(公司内quvideo2和有线在一个局域网)
 
+### Hybrid配置 参考 [Hybrid接入指南](https://quvideo.worktile.com/drive/57678b7512de9f970cab8334/575125fe2c29f5270554f1a3)
+
+* 需要注意的是H5Activity需要注册到Manifest中。
+
 ### TODO
 * 支持调试JSApi
 * 展示目前App支持的Api
