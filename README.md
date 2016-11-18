@@ -22,9 +22,9 @@ Important: 手机必须和电脑在同一个局域网(公司内quvideo2和有线
 
 ### Sample
 
-![](http://192.168.1.33:9090/vivaandroid/HybridDebugServer/raw/master/image/debugHybridHtml.png)
+![](http://192.168.1.33:9090/vivaandroid/HybridDebugServer/raw/master/image/debugHybridHtml.png =700x400)
 
-![](http://192.168.1.33:9090/vivaandroid/HybridDebugServer/raw/master/image/hybrid_debug.gif)
+![](http://192.168.1.33:9090/vivaandroid/HybridDebugServer/raw/master/image/hybrid_debug.gif =250x450)
 
 
 ### TODO
