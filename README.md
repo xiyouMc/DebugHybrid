@@ -6,7 +6,7 @@
 
 ### Using Hybrid JS Debug Library in your application
 ```groovy
-debugCompile 'com.vivavideo.mobile:debugjs:0.2.0@aar'
+debugCompile 'com.vivavideo.mobile:debug-hybrid:0.2.0@aar'
 ```
 Use `debugCompile` so that it will only compile in your debug build not in release apk.
 
