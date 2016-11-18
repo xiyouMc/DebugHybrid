@@ -96,5 +96,7 @@
     <orderEntry type="jdk" jdkName="Android API 22 Platform (1)" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" exported="" name="gson-2.4" level="project" />
+    <orderEntry type="library" exported="" name="framework-4.0.16074" level="project" />
+    <orderEntry type="library" exported="" name="h5api-2.2.16101301" level="project" />
   </component>
 </module>

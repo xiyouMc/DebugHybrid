@@ -1,11 +1,16 @@
 package com.vivavideo.mobile.debugjs.server;
 
+import com.dynamicload.framework.util.FrameworkUtil;
 import com.vivavideo.mobile.debugjs.model.Response;
 import com.vivavideo.mobile.debugjs.util.DebugUtil;
+import com.vivavideo.mobile.h5api.api.H5Bundle;
+import com.vivavideo.mobile.h5api.api.H5Context;
+import com.vivavideo.mobile.h5api.api.H5Param;
 
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.AssetManager;
+import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 
@@ -113,10 +118,13 @@ public class DebugServer implements Runnable {
                     e.printStackTrace();
                 }
 
-                Intent intent = new Intent();
-                intent.setAction(DebugUtil.OPEN_URL_BROAD);
-                intent.putExtra("url", openUrl);
-                mContext.sendBroadcast(intent);
+                H5Context h5Context = new H5Context(FrameworkUtil.getContext());
+                H5Bundle h5Bundle = new H5Bundle();
+                Bundle bundle = new Bundle();
+                bundle.putString(H5Param.URL, openUrl);
+                h5Bundle.setParams(bundle);
+                //start Hybrid
+                DebugUtil.getH5Service().startPage(h5Context,h5Bundle);
             } else {
                 bytes = loadContent(route);
             }

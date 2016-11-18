@@ -1,5 +1,5 @@
 $( document ).ready(function() {
-    $("#url").keypress(function(e){
+    $("#hybridUrl").keypress(function(e){
         if(e.which == 13) {
             openFunction();
         }
@@ -7,8 +7,8 @@ $( document ).ready(function() {
 });
 
 function openFunction(){
-  var url = $('url').val();
-
+  var url = $('#hybridUrl').val();
+  alert(url);
   $.ajax(
     {
       url:"open?url="+escape(url), success: function(result){

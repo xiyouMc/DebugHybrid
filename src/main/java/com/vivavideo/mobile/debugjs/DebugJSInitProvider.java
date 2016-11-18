@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.pm.ProviderInfo;
 import android.database.Cursor;
 import android.net.Uri;
+import android.util.Log;
 
 /**
  * Description:
@@ -19,7 +20,9 @@ public class DebugJSInitProvider extends ContentProvider {
 
     @Override
     public boolean onCreate() {
-        return false;
+        Log.d("DebugJSInitProvider", "init debugjs");
+        DebugJS.initialize(getContext());
+        return true;
     }
 
     @Override
