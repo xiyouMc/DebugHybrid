@@ -13,49 +13,60 @@
 </head>
 
 <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="index.html">Hybrid JS Debug</a>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="http://192.168.1.33:9090/vivaandroid/HybridDebugServer/tree/master" target="_blank">Gitlab</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html">Hybrid JS Debug</a>
         </div>
-        <!-- /.container -->
-    </nav>
-
-
-    <div class="container padding-fifty">
-      <div class="row padding-twenty">
-     <div class="col-sm-12">
-         <div class="form-group">
-             <label for="hybridUrl">OpenUrl</label>
-             <input class="form-control" id="hybridUrl">
-         </div>
-         <button id="selected-db-info" type="button" class="btn btn-info">Welcome</button>
-         <button id="success-info" type="button" class="btn btn-success display-none">Query Executed</button>
-         <button id="error-info" type="button" class="btn btn-danger display-none">Query Not Executed</button>
-         <button id="run-open" type="submit" onclick="openFunction()" class="btn btn-primary pull-right disabled">Open Url
-         </button>
-     </div>
- </div>
-
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="http://192.168.1.33:9090/vivaandroid/HybridDebugServer/tree/master"
+                       target="_blank">Gitlab</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
     </div>
+    <!-- /.container -->
+</nav>
+
+
+<div class="container padding-fifty">
+    <div class="row padding-twenty">
+        <div class="col-sm-12">
+            <div class="form-group">
+                <label for="hybridUrl">OpenUrl</label>
+                <input class="form-control" id="hybridUrl">
+            </div>
+            <button id="selected-db-info" type="button" class="btn btn-info">Welcome</button>
+            <button id="success-info" type="button" class="btn btn-success display-none">Query Executed</button>
+            <button id="error-info" type="button" class="btn btn-danger display-none">Query Not Executed</button>
+            <button id="run-open" type="submit" onclick="openFunction()" class="btn btn-primary pull-right disabled">
+                Open Url
+            </button>
+        </div>
+    </div>
+    <div class="row padding-twenty">
+        <div class="col-sm-12">
+            <button id="inspect" type="submit" onclick="inspect()" class="btn btn-primary pull-right">
+                inspect
+            </button>
+        </div>
+    </div>
+
+
+</div>
 
 <script src="hybrid.debug.js"></script>
 </body>
