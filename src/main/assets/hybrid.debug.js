@@ -96,3 +96,32 @@ function judgeUA(){
 //        if(Sys.opera) document.write('Opera: '+Sys.opera);
 //        if(Sys.safari) document.write('Safari: '+Sys.safari);
 }
+
+function showAlert(){
+var params = {
+               title: '亲',
+               message: '你好',
+               button: '确定'
+              };
+$.ajax(
+    {
+      url:"jsBridge?jsApi="+"alert" +"&params="+JSON.stringify(params),
+      success: function(result){
+        result = JSON.parse(result);
+        console.log(result);
+      }
+    }
+  );
+}
+
+function getNetworkType(){
+$.ajax(
+    {
+     url:"jsBridge?jsApi=getNetworkType",
+     success: function(result){
+        result = JSON.parse(result);
+         console.log(result);
+     }
+    }
+);
+}

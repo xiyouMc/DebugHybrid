@@ -7,7 +7,13 @@ import com.vivavideo.mobile.h5api.api.H5Bundle;
 import com.vivavideo.mobile.h5api.api.H5Context;
 import com.vivavideo.mobile.h5api.api.H5Param;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.res.AssetManager;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -129,6 +135,33 @@ public class DebugServer implements Runnable {
                     writeServerError(output, e.toString());
                     return;
                 }
+            } else if (route.startsWith("jsBridge")) {
+                IntentFilter filter = new IntentFilter();
+                filter.addAction("hybrid.action.console.log");
+                FrameworkUtil.getContext().registerReceiver(new BroadcastReceiver() {
+                    @Override
+                    public void onReceive(Context context, Intent intent) {
+                        FrameworkUtil.getContext().unregisterReceiver(this);
+                        String message = intent.getStringExtra("consoleLog");
+                        Log.d(TAG, "message:" + message);
+                    }
+                }, filter);
+                String jsApi = null;
+                if (route.contains("?jsApi=")) {
+                    jsApi = route.substring(route.indexOf("=") + 1,
+                            route.contains("&") ? route.indexOf("&") : route.length());
+                }
+                JSONObject params = null;
+                if (route.contains("params=")) {
+                    try {
+                        params = new JSONObject(URLDecoder.decode(route.substring(route.indexOf("params=") + 7, route.length()), "utf-8"));
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                }
+
+                Log.d(TAG, "jsApi:" + jsApi + " params:" + (params != null ? params.toString() : ""));
+                rountJSBridge(jsApi, params);
             } else {
                 bytes = loadContent(route);
             }
@@ -152,6 +185,10 @@ public class DebugServer implements Runnable {
                 reader.close();
             }
         }
+    }
+
+    private void rountJSBridge(String event, JSONObject params) {
+        DebugUtil.getH5Service().sendIntent(event, params);
     }
 
     private String detectMimeType(String fileName) {
