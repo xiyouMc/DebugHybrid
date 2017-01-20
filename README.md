@@ -16,16 +16,16 @@ That’s all, just start the application, you will be able to see logs in the lo
 
 Important: 手机必须和电脑在同一个局域网(公司内quvideo2和有线在一个局域网)
 
-### Hybrid配置 参考 [Hybrid接入指南](https://quvideo.worktile.com/drive/57678b7512de9f970cab8334/575125fe2c29f5270554f1a3)
+~~~ ### Hybrid配置 参考 [Hybrid接入指南](https://quvideo.worktile.com/drive/57678b7512de9f970cab8334/575125fe2c29f5270554f1a3) ~~~
 
 * 需要注意的是H5Activity需要注册到Manifest中。
 
 ### Sample
 * 以下是通过Pc浏览器，在小影的Hybrid中打开baidu首页。
 
-<img src="http://192.168.1.33:9090/vivaandroid/HybridDebugServer/raw/master/image/debugHybridHtml.png" width = "700" height = "400" alt="图片名称" align=center />
+<img src="https://raw.githubusercontent.com/xiyouMc/DebugHybrid/master/image/debugHybridHtml.png" width = "700" height = "400" alt="图片名称" align=center />
 
-<img src="http://192.168.1.33:9090/vivaandroid/HybridDebugServer/raw/master/image/hybrid_debug.gif" width = "250" height = "450" alt="图片名称" align=center />
+<img src="https://github.com/xiyouMc/DebugHybrid/blob/master/image/hybrid_debug.gif" width = "250" height = "450" alt="图片名称" align=center />
 
 
 
