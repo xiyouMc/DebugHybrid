@@ -14,7 +14,7 @@ import android.util.Log;
 
 public class DebugJS {
     private static final String TAG = DebugJS.class.getSimpleName();
-    private static final int DEFAULT_PORT = 9090;
+    private static final int DEFAULT_PORT = 9099;
     private static DebugServer mDebugServer;
     private static String addressLog = "not available";
 
